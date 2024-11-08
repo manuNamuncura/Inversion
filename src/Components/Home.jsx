@@ -1,9 +1,11 @@
-import { Button, AppBar, Toolbar, Typography, Container, Card, CardContent, CardHeader, IconButton } from "@mui/material";
-import { ChevronRight, BarChart, Shield, TrendingUp, Book } from "@mui/icons-material";
+import React from "react";
+import { AppBar, Toolbar, IconButton, Typography, Button, Container, Card, CardHeader, CardContent, Box } from "@mui/material";
+import { TrendingUp, BarChart, Shield, Book, ChevronRight } from "@mui/icons-material";
 
-export default function HomePage() {
+function InverArgHomePage() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      {/* Navbar */}
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="logo">
@@ -12,15 +14,16 @@ export default function HomePage() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             InverArg
           </Typography>
-          <Button color="inherit">Inicio</Button>
           <Button color="inherit">Características</Button>
           <Button color="inherit">Análisis</Button>
           <Button color="inherit">Contacto</Button>
         </Toolbar>
       </AppBar>
 
-      <main style={{ flex: 1 }}>
-        <section style={{ padding: "3rem 0", backgroundColor: "#f5f5f5" }}>
+      {/* Main content */}
+      <Box component="main" sx={{ flex: 1 }}>
+        {/* Intro Section */}
+        <Box sx={{ py: 6, backgroundColor: "#f5f5f5" }}>
           <Container>
             <Typography variant="h3" align="center" gutterBottom>
               Invierte en Argentina con confianza
@@ -28,19 +31,20 @@ export default function HomePage() {
             <Typography variant="body1" align="center" color="textSecondary" paragraph>
               InverArg te ofrece una plataforma interactiva para invertir en bonos y acciones argentinas. Toma decisiones informadas con nuestro análisis de mercado local.
             </Typography>
-            <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
+            <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
               <Button variant="contained" color="primary">Comenzar ahora</Button>
               <Button variant="outlined" color="primary">Saber más</Button>
-            </div>
+            </Box>
           </Container>
-        </section>
+        </Box>
 
-        <section style={{ padding: "3rem 0" }}>
+        {/* Features Section */}
+        <Box sx={{ py: 6 }}>
           <Container>
             <Typography variant="h4" align="center" gutterBottom>
               Características principales
             </Typography>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
+            <Box sx={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 2 }}>
               <Card>
                 <CardHeader avatar={<BarChart />} title="Análisis de mercado local" />
                 <CardContent>
@@ -65,16 +69,17 @@ export default function HomePage() {
                   </Typography>
                 </CardContent>
               </Card>
-            </div>
+            </Box>
           </Container>
-        </section>
+        </Box>
 
-        <section style={{ padding: "3rem 0", backgroundColor: "#f5f5f5" }}>
+        {/* Market Analysis Section */}
+        <Box sx={{ py: 6, backgroundColor: "#f5f5f5" }}>
           <Container>
             <Typography variant="h4" align="center" gutterBottom>
               Análisis de mercado
             </Typography>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
+            <Box sx={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 2 }}>
               <Card>
                 <CardHeader title="Tendencias del mercado argentino" />
                 <CardContent>
@@ -91,11 +96,12 @@ export default function HomePage() {
                   </Typography>
                 </CardContent>
               </Card>
-            </div>
+            </Box>
           </Container>
-        </section>
+        </Box>
 
-        <section style={{ padding: "3rem 0" }}>
+        {/* Regulation Section */}
+        <Box sx={{ py: 6 }}>
           <Container>
             <Typography variant="h4" align="center" gutterBottom>
               Regulación y cumplimiento
@@ -109,9 +115,10 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </Container>
-        </section>
+        </Box>
 
-        <section style={{ padding: "3rem 0", backgroundColor: "#f5f5f5" }}>
+        {/* Call to Action Section */}
+        <Box sx={{ py: 6, backgroundColor: "#f5f5f5" }}>
           <Container>
             <Typography variant="h4" align="center" gutterBottom>
               Comienza a invertir hoy mismo
@@ -119,24 +126,27 @@ export default function HomePage() {
             <Typography variant="body1" align="center" color="textSecondary" paragraph>
               Únete a InverArg y descubre las oportunidades de inversión en el mercado argentino.
             </Typography>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Button variant="contained" color="primary" endIcon={<ChevronRight />}>
                 Registrarse ahora
               </Button>
-            </div>
+            </Box>
           </Container>
-        </section>
-      </main>
+        </Box>
+      </Box>
 
-      <footer style={{ padding: "1rem", backgroundColor: "#333", color: "#fff", textAlign: "center" }}>
+      {/* Footer */}
+      <Box component="footer" sx={{ py: 2, backgroundColor: "#333", color: "#fff", textAlign: "center" }}>
         <Typography variant="body2" align="center">
           © 2024 InverArg. Todos los derechos reservados.
         </Typography>
-        <div style={{ marginTop: "0.5rem", display: "flex", justifyContent: "center", gap: "1rem" }}>
+        <Box sx={{ mt: 1, display: "flex", justifyContent: "center", gap: 2 }}>
           <Button color="inherit" size="small">Términos de servicio</Button>
           <Button color="inherit" size="small">Privacidad</Button>
-        </div>
-      </footer>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
+
+export default InverArgHomePage;
