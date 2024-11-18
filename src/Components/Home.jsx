@@ -218,7 +218,7 @@ function Home() {
               color="textSecondary"
               paragraph
             >
-              Únete a InverArg y descubre las oportunidades de inversión en el
+              Únete a InvertirGO y descubre las oportunidades de inversión en el
               mercado argentino.
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -245,7 +245,7 @@ function Home() {
         }}
       >
         <Typography variant="body2" align="center">
-          © 2024 InverArg. Todos los derechos reservados.
+          © 2024 InvertirGO. Todos los derechos reservados.
         </Typography>
         <Box sx={{ mt: 1, display: "flex", justifyContent: "center", gap: 2 }}>
           <Button color="inherit" size="small">
