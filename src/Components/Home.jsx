@@ -65,9 +65,6 @@ function Home() {
               nuestro análisis de mercado local.
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-              <Button variant="contained" color="primary">
-                Comenzar ahora
-              </Button>
               <Button variant="outlined" color="primary">
                 Saber más
               </Button>
@@ -88,6 +85,7 @@ function Home() {
                 gap: 2,
               }}
             >
+              {/* Navegacion analisis-mercado*/}
               <ButtonBase onClick={() => navigate("/analisis-mercado")}>
                 <Card>
                   <CardHeader
@@ -102,6 +100,7 @@ function Home() {
                   </CardContent>
                 </Card>
               </ButtonBase>
+
               <Card>
                 <CardHeader
                   avatar={<Shield />}
@@ -140,15 +139,17 @@ function Home() {
                 gap: 2,
               }}
             >
-              <Card>
-                <CardHeader title="Tendencias del mercado argentino" />
-                <CardContent>
-                  <Typography variant="body2">
-                    Mantente al día con las últimas tendencias y oportunidades
-                    en el mercado local.
-                  </Typography>
-                </CardContent>
-              </Card>
+              <ButtonBase onClick={() => navigate("/tendencias")}>
+                <Card>
+                  <CardHeader title="Tendencias del mercado argentino" />
+                  <CardContent>
+                    <Typography variant="body2">
+                      Mantente al día con las últimas tendencias y oportunidades
+                      en el mercado local.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </ButtonBase>
               <Card>
                 <CardHeader title="Oportunidades y desafíos" />
                 <CardContent>
@@ -184,11 +185,13 @@ function Home() {
         </Box>
 
         {/* Call to Action Section */}
-        <Box sx={{ 
-          height: "50vh", 
-          py: 5, 
-          backgroundColor: "#f5f5f5" 
-        }}>
+        <Box
+          sx={{
+            height: "50vh",
+            py: 5,
+            backgroundColor: "#f5f5f5",
+          }}
+        >
           <Container>
             <Typography variant="h3" align="center" gutterBottom>
               Comienza a invertir hoy mismo
