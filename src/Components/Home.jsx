@@ -27,12 +27,12 @@ function Home() {
     <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       {/* Navbar */}
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ flexWrap: "wrap" }}>
           <IconButton
             edge="start"
             color="inherit"
             aria-label="logo"
-            sx={{ borderRadius: "0%" }}
+            sx={{ borderRadius: "0%", mr:2 }}
           >
             <TrendingUp />
             <Typography variant="h6" component="div">
@@ -40,9 +40,17 @@ function Home() {
             </Typography>
           </IconButton>
 
-          <Button color="inherit">Características</Button>
-          <Button color="inherit">Análisis</Button>
-          <Button color="inherit">Contacto</Button>
+          <Box
+            sx={{
+              display: {xs: "none", sm: "flex"},
+              flexGrow: 1,
+              justifyContent: "flex-end",
+            }}
+          >
+            <Button color="inherit">Características</Button>
+            <Button color="inherit">Análisis</Button>
+            <Button color="inherit">Contacto</Button>
+          </Box>  
         </Toolbar>
       </AppBar>
 
@@ -60,7 +68,7 @@ function Home() {
               color="textSecondary"
               paragraph
             >
-              InverArg te ofrece una plataforma interactiva para invertir en
+              InvertirGO te ofrece una plataforma interactiva para invertir en
               bonos y acciones argentinas. Toma decisiones informadas con
               nuestro análisis de mercado local.
             </Typography>
@@ -73,21 +81,30 @@ function Home() {
         </Box>
 
         {/* Features Section */}
-        <Box sx={{ height: "50vh", py: 6 }}>
-          <Container>
+        <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
             <Typography variant="h3" align="center" gutterBottom>
               Características principales
             </Typography>
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gridTemplateColumns: {
+                  xs: "repeat(1, 1fr)", // Una sola columna en móviles
+                  sm: "repeat(auto-fit, minmax(280px, 1fr))",
+                },
                 gap: 2,
               }}
             >
               {/* Navegacion analisis-mercado*/}
-              <ButtonBase onClick={() => navigate("/analisis-mercado")}>
-                <Card>
+              <ButtonBase 
+                onClick={() => navigate("/analisis-mercado")}
+                sx={{
+                  width: "100%", // Asegura que la tarjeta se adapte
+                  display: "block",
+                  textAlign: "left",
+                }}
+              >
+                <Card sx={{ height: "100%" }}>
                   <CardHeader
                     avatar={<BarChart />}
                     title="Análisis de mercado local"
@@ -123,7 +140,6 @@ function Home() {
                 </CardContent>
               </Card>
             </Box>
-          </Container>
         </Box>
 
         {/* Market Analysis Section */}
