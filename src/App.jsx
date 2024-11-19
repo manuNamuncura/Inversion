@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Home from './Components/Home';
-import Main from './Components/Main';
+import Regulacion from './Components/Regulacion';
 import InvestmentTypes from './Components/Analisis';
 import Tendencias from './Components/Tendencias';
 import Educacion from './Components/Educacion';
@@ -21,8 +21,7 @@ function App() {
         <Route path="/analisis-mercado" element={<InvestmentTypes />} />
         <Route path="/tendencias" element={<Tendencias />} />
         <Route path="/educacion-financiera" element={<Educacion />} />
-        {/* <Route path="/regulacion-cumplimiento" element={<RegulacionCumplimiento />} />
-        <Route path="/educacion-financiera" element={<EducacionFinanciera />} /> */}
+        <Route path="/regulacion-cumplimiento" element={<Regulacion />} />
       </Routes>
     </Router>
   );
