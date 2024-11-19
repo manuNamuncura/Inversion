@@ -198,7 +198,7 @@ function Home() {
               <CardHeader title="Compromiso con la seguridad" />
               <CardContent>
                 <Typography variant="body2">
-                  En InverArg, nos tomamos muy en serio la seguridad de tus
+                  En InvertirGO, nos tomamos muy en serio la seguridad de tus
                   inversiones. Cumplimos con todas las regulaciones establecidas
                   por la Comisión Nacional de Valores (CNV) y nos mantenemos
                   actualizados con las últimas normas del mercado financiero
