@@ -20,6 +20,7 @@ import {
   ChevronRight,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -82,8 +83,12 @@ function Home() {
 
         {/* Features Section */}
         <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
-            <Typography variant="h3" align="center" gutterBottom>
-              Características principales
+            <Typography 
+              variant="h3" 
+              align="center" 
+              gutterBottom
+            >
+                Características principales
             </Typography>
             <Box
               sx={{
@@ -104,10 +109,11 @@ function Home() {
                   textAlign: "left",
                 }}
               >
-                <Card sx={{ height: "100%" }}>
+                <Card className="feature-title">
                   <CardHeader
                     avatar={<BarChart />}
                     title="Análisis de mercado local"
+                    
                   />
                   <CardContent>
                     <Typography variant="body2">
@@ -118,7 +124,7 @@ function Home() {
                 </Card>
               </ButtonBase>
 
-              <Card>
+              <Card className="feature-title">
                 <CardHeader
                   avatar={<Shield />}
                   title="Regulación y cumplimiento"
@@ -130,8 +136,11 @@ function Home() {
                   </Typography>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader avatar={<Book />} title="Educación financiera" />
+
+              <Card className="feature-title">
+                <CardHeader 
+                  avatar={<Book />} 
+                  title="Educación financiera" />
                 <CardContent>
                   <Typography variant="body2">
                     Aprende sobre inversiones con nuestros recursos educativos
