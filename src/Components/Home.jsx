@@ -33,7 +33,7 @@ function Home() {
             edge="start"
             color="inherit"
             aria-label="logo"
-            sx={{ borderRadius: "0%", mr:2 }}
+            sx={{ borderRadius: "0%", mr: 2 }}
           >
             <TrendingUp />
             <Typography variant="h6" component="div">
@@ -43,7 +43,7 @@ function Home() {
 
           <Box
             sx={{
-              display: {xs: "none", sm: "flex"},
+              display: { xs: "none", sm: "flex" },
               flexGrow: 1,
               justifyContent: "flex-end",
             }}
@@ -51,7 +51,7 @@ function Home() {
             <Button color="inherit">Características</Button>
             <Button color="inherit">Análisis</Button>
             <Button color="inherit">Contacto</Button>
-          </Box>  
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -83,64 +83,68 @@ function Home() {
 
         {/* Features Section */}
         <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
-            <Typography 
-              variant="h3" 
-              align="center" 
-              gutterBottom
-            >
-                Características principales
-            </Typography>
-            <Box
+          <Typography variant="h3" align="center" gutterBottom>
+            Características principales
+          </Typography>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "repeat(1, 1fr)", // Una sola columna en móviles
+                sm: "repeat(auto-fit, minmax(280px, 1fr))",
+              },
+              gap: 2,
+            }}
+          >
+            {/* Navegacion analisis-mercado*/}
+            <ButtonBase
+              onClick={() => navigate("/analisis-mercado")}
               sx={{
-                display: "grid",
-                gridTemplateColumns: {
-                  xs: "repeat(1, 1fr)", // Una sola columna en móviles
-                  sm: "repeat(auto-fit, minmax(280px, 1fr))",
-                },
-                gap: 2,
+                width: "100%", // Asegura que la tarjeta se adapte
+                display: "block",
+                textAlign: "left",
               }}
             >
-              {/* Navegacion analisis-mercado*/}
-              <ButtonBase 
-                onClick={() => navigate("/analisis-mercado")}
-                sx={{
-                  width: "100%", // Asegura que la tarjeta se adapte
-                  display: "block",
-                  textAlign: "left",
-                }}
-              >
-                <Card className="feature-title">
-                  <CardHeader
-                    avatar={<BarChart />}
-                    title="Análisis de mercado local"
-                    
-                  />
-                  <CardContent>
-                    <Typography variant="body2">
-                      Accede a análisis detallados del mercado argentino para
-                      tomar decisiones informadas.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </ButtonBase>
-
               <Card className="feature-title">
                 <CardHeader
-                  avatar={<Shield />}
-                  title="Regulación y cumplimiento"
+                  avatar={<BarChart />}
+                  title="Análisis de mercado local"
                 />
                 <CardContent>
                   <Typography variant="body2">
-                    Operamos bajo las regulaciones de la Comisión Nacional de
-                    Valores (CNV) para tu seguridad.
+                    Accede a análisis detallados del mercado argentino para
+                    tomar decisiones informadas.
                   </Typography>
                 </CardContent>
               </Card>
+            </ButtonBase>
 
+            <Card className="feature-title">
+              <CardHeader
+                avatar={<Shield />}
+                title="Regulación y cumplimiento"
+              />
+              <CardContent>
+                <Typography variant="body2">
+                  Operamos bajo las regulaciones de la Comisión Nacional de
+                  Valores (CNV) para tu seguridad.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <ButtonBase
+              onClick={() => navigate("/educacion-financiera")}
+              sx={{
+                width: "100%", // Asegura que la tarjeta se adapte
+                display: "block",
+                textAlign: "left",
+              }}
+            >
               <Card className="feature-title">
                 <CardHeader 
                   avatar={<Book />} 
-                  title="Educación financiera" />
+                  title="Educación financiera" 
+                />
                 <CardContent>
                   <Typography variant="body2">
                     Aprende sobre inversiones con nuestros recursos educativos
@@ -148,7 +152,8 @@ function Home() {
                   </Typography>
                 </CardContent>
               </Card>
-            </Box>
+            </ButtonBase>
+          </Box>
         </Box>
 
         {/* Market Analysis Section */}
