@@ -58,7 +58,7 @@ function Home() {
       {/* Main content */}
       <Box component="main" sx={{ flex: 1 }}>
         {/* Intro Section */}
-        <Box sx={{ height: "50vh", py: 6, backgroundColor: "#f5f5f5" }}>
+        <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
           <Container>
             <Typography variant="h2" align="center" gutterBottom>
               Invierte en Argentina con confianza
@@ -119,18 +119,29 @@ function Home() {
               </Card>
             </ButtonBase>
 
-            <Card className="feature-title">
-              <CardHeader
-                avatar={<Shield />}
-                title="Regulación y cumplimiento"
-              />
-              <CardContent>
-                <Typography variant="body2">
-                  Operamos bajo las regulaciones de la Comisión Nacional de
-                  Valores (CNV) para tu seguridad.
-                </Typography>
-              </CardContent>
-            </Card>
+            {/* Navegacion regulacion*/}
+
+            <ButtonBase
+              onClick={() => navigate("/regulacion-cumplimiento")}
+              sx={{
+                width: "100%", // Asegura que la tarjeta se adapte
+                display: "block",
+                textAlign: "left",
+              }}
+            >
+              <Card className="feature-title">
+                <CardHeader
+                  avatar={<Shield />}
+                  title="Regulación y cumplimiento"
+                />
+                <CardContent>
+                  <Typography variant="body2">
+                    Operamos bajo las regulaciones de la Comisión Nacional de
+                    Valores (CNV) para tu seguridad.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </ButtonBase>
 
             <ButtonBase
               onClick={() => navigate("/educacion-financiera")}
@@ -141,10 +152,7 @@ function Home() {
               }}
             >
               <Card className="feature-title">
-                <CardHeader 
-                  avatar={<Book />} 
-                  title="Educación financiera" 
-                />
+                <CardHeader avatar={<Book />} title="Educación financiera" />
                 <CardContent>
                   <Typography variant="body2">
                     Aprende sobre inversiones con nuestros recursos educativos
@@ -157,20 +165,21 @@ function Home() {
         </Box>
 
         {/* Market Analysis Section */}
-        <Box sx={{ height: "50vh", py: 6, backgroundColor: "#f5f5f5" }}>
+        <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
+          
           <Container>
             <Typography variant="h3" align="center" gutterBottom>
               Análisis de mercado
             </Typography>
             <Box
               sx={{
-                display: "grid",
+                display: "flex",
                 gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: 2,
+                gap: 3,
               }}
             >
               <ButtonBase onClick={() => navigate("/tendencias")}>
-                <Card>
+                <Card className="feature-title-two">
                   <CardHeader title="Tendencias del mercado argentino" />
                   <CardContent>
                     <Typography variant="body2">
@@ -180,26 +189,30 @@ function Home() {
                   </CardContent>
                 </Card>
               </ButtonBase>
-              <Card>
-                <CardHeader title="Oportunidades y desafíos" />
-                <CardContent>
-                  <Typography variant="body2">
-                    Identifica las mejores oportunidades de inversión y
-                    prepárate para los desafíos del mercado argentino.
-                  </Typography>
-                </CardContent>
-              </Card>
+
+              <ButtonBase onClick={() => navigate("/oportunidades")}>
+                <Card className="feature-title-two">
+                  <CardHeader title="Oportunidades y desafíos" />
+                  <CardContent>
+                    <Typography variant="body2">
+                      Identifica las mejores oportunidades de inversión y
+                      prepárate para los desafíos del mercado argentino.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </ButtonBase>
+
             </Box>
           </Container>
         </Box>
 
         {/* Regulation Section */}
-        <Box sx={{ height: "50vh", py: 6 }}>
+        <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
           <Container>
             <Typography variant="h3" align="center" gutterBottom>
               Regulación y cumplimiento
             </Typography>
-            <Card>
+            <Card className="feature-title-three">
               <CardHeader title="Compromiso con la seguridad" />
               <CardContent>
                 <Typography variant="body2">
@@ -215,13 +228,7 @@ function Home() {
         </Box>
 
         {/* Call to Action Section */}
-        <Box
-          sx={{
-            height: "50vh",
-            py: 5,
-            backgroundColor: "#f5f5f5",
-          }}
-        >
+        <Box sx={{ py: { xs: 3, sm: 6 }, px: { xs: 2, sm: 0 } }}>
           <Container>
             <Typography variant="h3" align="center" gutterBottom>
               Comienza a invertir hoy mismo
